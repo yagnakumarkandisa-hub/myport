@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kandisa Yagna Kumar | Aspiring Web Developer</title>
+<meta name="description" content="Portfolio of Kandisa Yagna Kumar, an aspiring web developer working with Python, Java, HTML, CSS and exploring generative AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14161c;--bg2:#1a1d25;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.1);--tx:#f2f3f7;--mut:#a9aebd;--blue:#6ea8ff;--vio:#9a86ff;--grad:linear-gradient(120deg,#6ea8ff,#9a86ff);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 1rem/1.7 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{line-height:1.15;margin:0;letter-spacing:-.02em}
+p{margin:0}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+section{padding:96px 0}
+section:nth-of-type(even){background:var(--bg2)}
+.h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:14px}
+.lead{color:var(--mut);max-width:62ch;margin-bottom:44px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(20,22,28,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;text-decoration:none;letter-spacing:-.02em}
+.menu{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.menu a{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--mut);font-size:.92rem;font-weight:500;transition:color .2s,background .2s}
+.menu a:hover{color:var(--tx)}
+.menu a.on{color:var(--tx);background:rgba(154,134,255,.18)}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--line);background:var(--card);border-radius:12px;cursor:pointer;color:var(--tx);align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:transform .25s,opacity .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded=true] span{background:transparent}
+.burger[aria-expanded=true] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded=true] span::after{transform:translateY(-6px) rotate(-45deg)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--tx);font:600 .95rem inherit;font-family:inherit;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.3)}
+.btn.pri{background:var(--grad);color:#10121a;border:0}
+.btn.pri:hover{filter:brightness(1.08)}
+.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed}
+.btn[aria-disabled=true]:hover{transform:none}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:130px 0 80px;background:radial-gradient(700px 400px at 85% 15%,rgba(154,134,255,.2),transparent 70%),radial-gradient(600px 400px at 5% 90%,rgba(110,168,255,.14),transparent 70%),var(--bg)}
+.hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.role{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--mut);font-size:.88rem;margin-bottom:22px;background:var(--card)}
+h1{font-size:clamp(2.4rem,6.5vw,4.4rem);font-weight:800;margin-bottom:20px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.in{color:var(--mut);font-size:1.1rem;max-width:56ch;margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.note{font-size:.82rem;color:var(--mut);margin-top:12px;min-height:1.4em}
+.term{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);backdrop-filter:blur(10px);overflow:hidden;animation:float 7s ease-in-out infinite}
+.term .bar{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2)}
+.term pre{margin:0;padding:20px;font:500 .88rem/1.8 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#d6dbea;white-space:pre-wrap}
+.term .k{color:var(--vio)}.term .s{color:var(--blue)}
+@keyframes float{50%{transform:translateY(-8px)}}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{padding:26px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
+.card h3{font-size:1.05rem;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(110,168,255,.1);border:1px solid rgba(110,168,255,.22);font-size:.9rem;font-weight:500}
+.ico{width:34px;height:34px;border-radius:10px;background:var(--grad);display:grid;place-items:center;margin-bottom:16px;color:#10121a}
+.ico svg{width:18px;height:18px}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.about p+p{margin-top:16px}
+.about p{color:var(--mut)}
+.about ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.about li{padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:var(--card);font-weight:600}
+/* timeline */
+.tl{position:relative;padding-left:30px;border-left:2px solid var(--line);display:grid;gap:32px}
+.tl article{position:relative}
+.tl article::before{content:"";position:absolute;left:-39px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--grad);box-shadow:0 0 0 5px var(--bg)}
+section:nth-of-type(even) .tl article::before{box-shadow:0 0 0 5px var(--bg2)}
+.tl time{color:var(--blue);font-weight:600;font-size:.9rem}
+.tl h3{font-size:1.25rem;margin:4px 0 2px}
+.tl .sub{color:var(--mut);margin-bottom:12px}
+.tl ul{margin:0;padding-left:20px;color:var(--mut);display:grid;gap:6px}
+/* projects */
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:36px;padding:32px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));margin-bottom:28px;transition:transform .25s,border-color .25s}
+.proj:hover{transform:translateY(-4px);border-color:rgba(154,134,255,.5)}
+.proj h3{font-size:1.7rem;margin-bottom:12px}
+.proj .ov{color:var(--mut);margin-bottom:20px}
+.proj h4{margin:0 0 4px;font-size:.95rem;color:var(--blue)}
+.proj .pt{color:var(--mut);margin-bottom:16px;font-size:.96rem}
+.proj ul.f{margin:0 0 22px;padding-left:20px;color:var(--mut);font-size:.96rem;display:grid;gap:4px}
+.prev{border:1px solid var(--line);border-radius:18px;background:var(--bg);padding:20px;display:flex;flex-direction:column;gap:12px;justify-content:center;min-height:260px}
+.prev .t{font-size:.8rem;color:var(--mut);margin-bottom:4px}
+.fld{height:42px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.04);display:flex;align-items:center;padding:0 14px;font-size:.88rem;color:var(--mut)}
+.fld b{color:var(--tx);font-weight:500}
+.pbtn{height:42px;border-radius:10px;background:var(--grad);color:#10121a;font-weight:700;display:grid;place-items:center;font-size:.9rem}
+.bub{padding:12px 16px;border-radius:14px;font-size:.88rem;max-width:88%}
+.bub.u{background:rgba(110,168,255,.15);align-self:flex-end}
+.bub.a{background:rgba(154,134,255,.15)}
+.links{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.links small{color:var(--mut)}
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+.info{display:grid;gap:16px;align-content:start}
+.info a,.info div{display:flex;gap:14px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--card);text-decoration:none;overflow-wrap:anywhere}
+.info span{display:block;color:var(--mut);font-size:.82rem}
+form{display:grid;gap:16px;padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+input,textarea{width:100%;font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:13px 14px;min-height:48px}
+textarea{min-height:140px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#7f8596}
+form .note{margin:0}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem;text-align:center}
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+.hero .grid,.about,.proj,.contact{grid-template-columns:1fr}
+.term{display:none}
+section{padding:72px 0}
+.burger{display:inline-flex}
+.menu{position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:12px 20px 20px;background:rgba(20,22,28,.97);border-bottom:1px solid var(--line);display:none}
+.menu.open{display:flex}
+.menu a{padding:14px;font-size:1rem}
+.proj{padding:22px}
+}
+@media(max-width:520px){.cta .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition:none!important}
+.rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<nav class="wrap" aria-label="Main">
+<a class="logo" href="#home">Yagna Kumar</a>
+<button class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+<ul class="menu" id="menu">
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main id="main">
+<section class="hero" id="home" aria-label="Introduction">
+<div class="wrap grid">
+<div>
+<span class="role">Aspiring Web Developer — Python | Java | Generative AI</span>
+<h1>Hi, I'm <span class="grad">Kandisa Yagna Kumar</span></h1>
+<p class="in">A B.Tech student from Vizianagaram who builds with Python, Java, HTML and CSS, and is exploring how generative AI can make everyday applications more useful.</p>
+<div class="cta">
+<a class="btn pri" href="#projects">View Projects</a>
+<a class="btn" href="#contact">Contact Me</a>
+<a class="btn" href="#" id="resume" role="button">Download Resume</a>
+</div>
+<p class="note" id="resumeNote" role="status"></p>
+</div>
+<div class="term" aria-hidden="true">
+<div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="k">class</span> Developer:
+    name = <span class="s">"Yagna Kumar"</span>
+    languages = [<span class="s">"Python"</span>, <span class="s">"Java"</span>]
+    web = [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>]
+    exploring = <span class="s">"Generative AI"</span>
+    status = <span class="s">"Open to opportunities"</span></pre>
+</div>
+</div>
+</section>
+
+<section id="about"><div class="wrap">
+<h2 class="h2 rv">About me</h2>
+<div class="about rv">
+<div>
+<p>I'm a B.Tech student (2023–2027) with a growing interest in web development and AI-powered applications. I work with Python and Java, build web pages with HTML and CSS, and enjoy turning ideas into tools people can actually use.</p>
+<p>My recent internship introduced me to generative AI concepts such as LLMs, RAG and NLP, and I've applied that interest in two projects: Autofill AI and AI Career Guidance. I like breaking problems into clear steps and keeping up with modern web technologies.</p>
+</div>
+<ul>
+<li>Web development</li><li>Python and Java</li><li>AI application development</li><li>Problem solving</li><li>Modern web technologies</li>
+</ul>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2 class="h2 rv">Skills</h2>
+<p class="lead rv">What I work with, grouped by area.</p>
+<div class="cards">
+<div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div><h3>Programming languages</h3><ul class="chips"><li>Python</li><li>Java</li></ul></div>
+<div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><h3>Web technologies</h3><ul class="chips"><li>HTML</li><li>CSS</li></ul></div>
+<div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/></svg></div><h3>Computer science concepts</h3><ul class="chips"><li>Object-Oriented Programming</li><li>Data Structures &amp; Algorithms</li></ul></div>
+<div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div><h3>Productivity</h3><ul class="chips"><li>Excel</li></ul></div>
+<div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg></div><h3>Professional skills</h3><ul class="chips"><li>Communication</li><li>Problem Solving</li></ul></div>
+</div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<h2 class="h2 rv">Experience</h2>
+<div class="tl rv">
+<article>
+<time>2026</time>
+<h3>Python &amp; Generative AI Intern</h3>
+<p class="sub">Pixel Wind Technologies</p>
+<ul>
+<li>Worked with generative AI concepts, including LLMs, RAG and NLP.</li>
+<li>Worked on text-generation optimization, fine-tuning and data augmentation.</li>
+<li>Wrote Python scripts for data preprocessing.</li>
+<li>Performed model evaluation.</li>
+</ul>
+</article>
+</div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2 class="h2 rv">Projects</h2>
+<p class="lead rv">Two AI-focused applications I've worked on.</p>
+
+<article class="proj rv">
+<div>
+<h3>Autofill AI</h3>
+<p class="ov">An AI-powered form-filling application. A one-click tool designed to automatically complete forms, streamline data entry, and improve the user experience.</p>
+<h4>Problem</h4><p class="pt">Filling in the same details on form after form is slow and repetitive.</p>
+<h4>Solution</h4><p class="pt">One click completes the form automatically, so users spend less time on data entry.</p>
+<h4>Key features</h4>
+<ul class="f"><li>One-click form filling</li><li>Automatic form completion</li><li>Streamlined data entry</li><li>Improved user experience</li></ul>
+<div class="links"><span class="btn" aria-disabled="true">GitHub</span><span class="btn" aria-disabled="true">Live demo</span><small>Links to be added</small></div>
+</div>
+<div class="prev" role="img" aria-label="Illustration of a form with fields filled by a single Autofill button">
+<span class="t">Illustration — not a screenshot</span>
+<div class="fld">Name: <b>&nbsp;Filled automatically</b></div>
+<div class="fld">Email: <b>&nbsp;Filled automatically</b></div>
+<div class="fld">Address: <b>&nbsp;Filled automatically</b></div>
+<div class="pbtn">Autofill with one click</div>
+</div>
+</article>
+
+<article class="proj rv">
+<div>
+<h3>AI Career Guidance</h3>
+<p class="ov">An AI-based career guidance application that provides personalized career suggestions based on users' skills, interests, and career goals.</p>
+<h4>Problem</h4><p class="pt">Choosing a career path is hard, and generic advice rarely fits an individual.</p>
+<h4>Solution</h4><p class="pt">Suggestions are tailored to what each user knows, enjoys and wants to achieve.</p>
+<h4>Key features</h4>
+<ul class="f"><li>Personalized career suggestions</li><li>Based on skills, interests and career goals</li><li>AI-driven guidance</li></ul>
+<div class="links"><span class="btn" aria-disabled="true">GitHub</span><span class="btn" aria-disabled="true">Live demo</span><small>Links to be added</small></div>
+</div>
+<div class="prev" role="img" aria-label="Illustration of a conversation where a user shares skills and interests and receives career suggestions">
+<span class="t">Illustration — not a screenshot</span>
+<div class="bub u">My skills, interests and goals</div>
+<div class="bub a">Career suggestions matched to you</div>
+<div class="fld">Skills · Interests · Goals</div>
+</div>
+</article>
+</div></section>
+
+<section id="education"><div class="wrap">
+<h2 class="h2 rv">Education</h2>
+<div class="tl rv">
+<article><time>2023 – 2027</time><h3>B.Tech</h3><p class="sub">Satya Institute of Technology and Management</p><p>GPA: 6.98</p></article>
+<article><time>2021 – 2023</time><h3>Intermediate</h3><p class="sub">Srinivasa Junior College</p><p>76.7%</p></article>
+<article><time>2020 – 2021</time><h3>SSC</h3><p class="sub">Sri Chaitanya Techno School</p><p>98%</p></article>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2 class="h2 rv">Contact</h2>
+<p class="lead rv">Have an opportunity or a question? Reach out.</p>
+<div class="contact rv">
+<div class="info">
+<a href="mailto:yagnakumarkandisa@gmail.com"><div style="display:block;padding:0;border:0;background:none"><span>Email</span>yagnakumarkandisa@gmail.com</div></a>
+<a href="tel:+918328093399"><div style="display:block;padding:0;border:0;background:none"><span>Phone</span>+91 83280 93399</div></a>
+<div><div style="display:block;padding:0;border:0;background:none"><span>Location</span>Vizianagaram, India</div></div>
+</div>
+<form id="cf" novalidate>
+<label for="n">Name<input id="n" name="name" autocomplete="name" required></label>
+<label for="e">Email<input id="e" name="email" type="email" autocomplete="email" required></label>
+<label for="m">Message<textarea id="m" name="message" required></textarea></label>
+<button class="btn pri" type="submit">Send Message</button>
+<p class="note" id="fs" role="status">This form opens your email app with the message ready to send. No data is stored on this site.</p>
+</form>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Kandisa Yagna Kumar</div></footer>
+
+<script>
+(function(){
+var burger=document.querySelector('.burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+
+var links=[].slice.call(menu.querySelectorAll('a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i});
+if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4)cur=secs.length-1;
+links.forEach(function(a,i){a.classList.toggle('on',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+window.addEventListener('scroll',spy,{passive:true});spy();
+
+var rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});rv.forEach(function(el){io.observe(el)})}
+else rv.forEach(function(el){el.classList.add('in')});
+
+document.getElementById('resume').addEventListener('click',function(e){e.preventDefault();
+document.getElementById('resumeNote').textContent='The resume file has not been attached to this site yet. Please email to request it.'});
+
+document.getElementById('cf').addEventListener('submit',function(e){e.preventDefault();
+var f=e.target,n=f.name.value.trim(),em=f.email.value.trim(),m=f.message.value.trim(),s=document.getElementById('fs');
+if(!n||!em||!m||!/^\S+@\S+\.\S+$/.test(em)){s.textContent='Please enter your name, a valid email address and a message.';return}
+location.href='mailto:yagnakumarkandisa@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(m+'\n\nFrom: '+n+' ('+em+')');
+s.textContent='Your email app should open with the message ready. Press send there to deliver it.'});
+})();
+</script>
+</body>
+</html>
